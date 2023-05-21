@@ -61,11 +61,11 @@ public class Main {
             return 1; // First and Last element is always 1
         }
         String key = Integer.toString(row)+ col;
-        if (cache.containsKey(key)){
+        if (cache.containsKey(key)){ // Checking if the value is present in cache
             return cache.get(key);
         }
         int val = printPascalValueMemo(row - 1, col - 1, cache) + printPascalValueMemo(row - 1, col, cache);
-        cache.put(key, val);
+        cache.put(key, val); // if value is not found we are saving the value
         return val;
     }
 }
